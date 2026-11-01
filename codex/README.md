@@ -9,7 +9,7 @@ Codex nutzt denselben Keystone-MCP-Server wie das Claude-Code-Plugin, eingetrage
 
 ## Kurzfassung
 
-1. Server-Datei herunterladen: https://meister-ai.io/downloads/keystone-mcp.mjs, z. B. nach `~/.keystone/keystone-mcp.mjs`
+1. Server-Datei herunterladen: https://keystone.oemer-coskun.de/downloads/keystone-mcp.mjs, z. B. nach `~/.keystone/keystone-mcp.mjs`
    (Befehle und Prüfsumme: [README im Repository-Root](../README.md#3-server-datei-für-codex-und-andere-clients)).
 2. `KEYSTONE_TOKEN` in der Shell-Umgebung setzen (nicht in die `config.toml` schreiben).
 3. Block aus `config.toml.example` in `~/.codex/config.toml` einfügen und den absoluten Pfad der Datei eintragen.

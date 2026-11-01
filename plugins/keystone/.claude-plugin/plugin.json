@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Keystone-Lektionen, Labs und Notizen in deiner eigenen Claude-Code-Sitzung: sokratischer Tutor, Lab-Workflow, Notizen und Sitzungsprotokoll über den Keystone-MCP-Server.",
   "author": { "name": "Keystone" },
-  "homepage": "https://meister-ai.io/konto/agent",
+  "homepage": "https://keystone.oemer-coskun.de/konto/agent",
   "repository": "https://github.com/oemer-coskun/keystone-plugins",
   "license": "LicenseRef-Keystone",
   "keywords": ["learning", "tutor", "labs", "mcp", "agentic-coding"],
@@ -12,8 +12,8 @@
     "keystone_url": {
       "type": "string",
       "title": "Keystone-URL",
-      "description": "Adresse deiner Keystone-Instanz, z. B. https://meister-ai.io (http nur für localhost).",
-      "default": "https://meister-ai.io",
+      "description": "Adresse deiner Keystone-Instanz, z. B. https://keystone.oemer-coskun.de (http nur für localhost).",
+      "default": "https://keystone.oemer-coskun.de",
       "required": true
     },
     "keystone_token": {

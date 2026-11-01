@@ -1,13 +1,13 @@
 # Keystone-Plugins
 
-Verbinde deinen eigenen Coding-Agenten mit [Keystone](https://meister-ai.io): Lektionen lesen, Labs im eigenen Projekt anlegen,
+Verbinde deinen eigenen Coding-Agenten mit [Keystone](https://keystone.oemer-coskun.de): Lektionen lesen, Labs im eigenen Projekt anlegen,
 sokratische Hinweise holen, Notizen und Lab-Nachweise zurück nach Keystone speichern.
 
 Du arbeitest in **deiner** Claude-Code- oder Codex-Sitzung mit **deinem** Abo. Keystone steuert deinen Agenten nie,
 schreibt nichts in dein Terminal und sieht keine Login-Daten deines KI-Anbieters.
 
 Die Schritt-für-Schritt-Anleitung mit fertig ausgefüllten Befehlen findest du auch in Keystone unter
-**Konto › Agent-Zugang** (https://meister-ai.io/konto/agent).
+**Konto › Agent-Zugang** (https://keystone.oemer-coskun.de/konto/agent).
 
 | Inhalt | Pfad |
 |---|---|
@@ -34,7 +34,7 @@ Es ist **kein** `npm install` nötig: Der MCP-Server ist eine einzelne, fertig g
 
 ## 1. Token erstellen
 
-1. In Keystone anmelden: https://meister-ai.io/konto/agent
+1. In Keystone anmelden: https://keystone.oemer-coskun.de/konto/agent
 2. „Neues Token“: Namen vergeben (z. B. „Laptop Claude Code“), Berechtigungen und Ablauf wählen.
 3. Den Token (`kst_pat_…`) **sofort kopieren** – er wird nur einmal angezeigt.
 
@@ -55,7 +55,7 @@ Alternativ in einer laufenden Sitzung: `/plugin marketplace add oemer-coskun/key
 
 Danach Claude Code (neu) starten. Beim Aktivieren fragt Claude Code nach:
 
-- **Keystone-URL** – vorbelegt mit `https://meister-ai.io`, einfach bestätigen.
+- **Keystone-URL** – vorbelegt mit `https://keystone.oemer-coskun.de`, einfach bestätigen.
 - **Keystone-Token** – deinen `kst_pat_…`-Token einfügen. Claude Code legt ihn im sicheren Speicher ab, nicht in `settings.json`.
 - **Sitzungs-Erinnerung** – an/aus (lokaler Hinweis auf `/keystone:log`, sendet nichts).
 
@@ -81,11 +81,11 @@ Entfernen: `claude plugin uninstall keystone@keystone-plugins` und `claude plugi
 setzen und dann:
 
 ```bash
-claude mcp add keystone --transport stdio --scope user --env KEYSTONE_URL=https://meister-ai.io --env KEYSTONE_SOURCE=CLAUDE_CODE --env KEYSTONE_TOKEN="$KEYSTONE_TOKEN" -- node ~/.keystone/keystone-mcp.mjs
+claude mcp add keystone --transport stdio --scope user --env KEYSTONE_URL=https://keystone.oemer-coskun.de --env KEYSTONE_SOURCE=CLAUDE_CODE --env KEYSTONE_TOKEN="$KEYSTONE_TOKEN" -- node ~/.keystone/keystone-mcp.mjs
 ```
 
 ```powershell
-claude mcp add keystone --transport stdio --scope user --env KEYSTONE_URL=https://meister-ai.io --env KEYSTONE_SOURCE=CLAUDE_CODE --env "KEYSTONE_TOKEN=$env:KEYSTONE_TOKEN" -- node "$HOME\.keystone\keystone-mcp.mjs"
+claude mcp add keystone --transport stdio --scope user --env KEYSTONE_URL=https://keystone.oemer-coskun.de --env KEYSTONE_SOURCE=CLAUDE_CODE --env "KEYSTONE_TOKEN=$env:KEYSTONE_TOKEN" -- node "$HOME\.keystone\keystone-mcp.mjs"
 ```
 
 Nachteil: Der Token steht dann im Klartext in deiner Claude-Code-Nutzerkonfiguration. Das Plugin speichert ihn sicherer.
@@ -99,7 +99,7 @@ Ordner `.keystone` in deinem Benutzerverzeichnis.
 
 ```bash
 mkdir -p ~/.keystone
-curl -fsSL -o ~/.keystone/keystone-mcp.mjs https://meister-ai.io/downloads/keystone-mcp.mjs
+curl -fsSL -o ~/.keystone/keystone-mcp.mjs https://keystone.oemer-coskun.de/downloads/keystone-mcp.mjs
 shasum -a 256 ~/.keystone/keystone-mcp.mjs
 ```
 
@@ -109,7 +109,7 @@ Unter Linux ohne `shasum`: `sha256sum ~/.keystone/keystone-mcp.mjs`.
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\.keystone" | Out-Null
-Invoke-WebRequest https://meister-ai.io/downloads/keystone-mcp.mjs -OutFile "$HOME\.keystone\keystone-mcp.mjs"
+Invoke-WebRequest https://keystone.oemer-coskun.de/downloads/keystone-mcp.mjs -OutFile "$HOME\.keystone\keystone-mcp.mjs"
 Get-FileHash "$HOME\.keystone\keystone-mcp.mjs" -Algorithm SHA256
 ```
 
@@ -156,7 +156,7 @@ Codex (CLI, IDE-Erweiterung und Desktop-App teilen sich `~/.codex/config.toml`) 
    tool_timeout_sec = 60
 
    [mcp_servers.keystone.env]
-   KEYSTONE_URL = "https://meister-ai.io"
+   KEYSTONE_URL = "https://keystone.oemer-coskun.de"
    KEYSTONE_SOURCE = "CODEX"
    ```
 
@@ -178,7 +178,7 @@ die Datei liegt, steht in der Doku deines Clients):
       "command": "node",
       "args": ["/ABSOLUTER/PFAD/.keystone/keystone-mcp.mjs"],
       "env": {
-        "KEYSTONE_URL": "https://meister-ai.io",
+        "KEYSTONE_URL": "https://keystone.oemer-coskun.de",
         "KEYSTONE_TOKEN": "kst_pat_...",
         "KEYSTONE_SOURCE": "MCP"
       }
@@ -210,9 +210,9 @@ Die Antwort zeigt deinen Namen, deine Kurse und den Projektordner. In Keystone w
 | Symptom | Lösung |
 |---|---|
 | `node` wird nicht gefunden / Server startet nicht | Node.js ≥ 20 installieren, Terminal und Agent neu starten, `node --version` prüfen. |
-| `/mcp` zeigt `keystone` als fehlgeschlagen | Plugin-Konfiguration prüfen (`/plugin` › keystone): URL `https://meister-ai.io` und Token gesetzt? Danach Claude Code neu starten. |
+| `/mcp` zeigt `keystone` als fehlgeschlagen | Plugin-Konfiguration prüfen (`/plugin` › keystone): URL `https://keystone.oemer-coskun.de` und Token gesetzt? Danach Claude Code neu starten. |
 | `claude plugin marketplace add` schlägt fehl | Schreibweise `oemer-coskun/keystone-plugins` prüfen; Internetzugang zu github.com nötig. Alternativ das Repository herunterladen und den lokalen Ordner angeben: `claude plugin marketplace add ./keystone-plugins`. |
-| „KEYSTONE_URL muss https:// verwenden“ | Die URL lautet `https://meister-ai.io` (ohne Pfad, mit `https://`). |
+| „KEYSTONE_URL muss https:// verwenden“ | Die URL lautet `https://keystone.oemer-coskun.de` (ohne Pfad, mit `https://`). |
 | „Token ungültig oder fehlt“, „abgelaufen“, „widerrufen“ | Neuen Token erstellen und neu eintragen (Plugin-Konfiguration bzw. `KEYSTONE_TOKEN`), Agent neu starten. |
 | „Dem Token fehlt die nötige Berechtigung“ | Token mit passender Berechtigung erstellen, z. B. „Notizen speichern“. |
 | „… in deinem Tarif nicht freigeschaltet“ | Die Lektion gehört zu einem Kurs, der für dein Konto nicht freigeschaltet ist. |
@@ -231,7 +231,7 @@ Die Antwort zeigt deinen Namen, deine Kurse und den Projektordner. In Keystone w
 - Was dein Agent aus Keystone liest, verarbeitet dein KI-Anbieter (Anthropic bzw. OpenAI) wie jeden anderen Kontext –
   unter dessen Bedingungen und mit deinem Abo.
 
-Ausführlich: https://meister-ai.io/datenschutz
+Ausführlich: https://keystone.oemer-coskun.de/datenschutz
 
 ## Lizenz
 

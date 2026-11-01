@@ -10,8 +10,8 @@ claude plugin marketplace add oemer-coskun/keystone-plugins
 claude plugin install keystone@keystone-plugins
 ```
 
-Beim Aktivieren fragt Claude Code nach der Keystone-URL (vorbelegt: `https://meister-ai.io`) und deinem Token
-(`kst_pat_…`, erstellt unter https://meister-ai.io/konto/agent). Der Token liegt danach im sicheren Speicher von Claude Code.
+Beim Aktivieren fragt Claude Code nach der Keystone-URL (vorbelegt: `https://keystone.oemer-coskun.de`) und deinem Token
+(`kst_pat_…`, erstellt unter https://keystone.oemer-coskun.de/konto/agent). Der Token liegt danach im sicheren Speicher von Claude Code.
 
 Test in einer Sitzung: „Rufe keystone_whoami auf.“ Ausführliche Anleitung und Fehlersuche: [README im Repository-Root](../../README.md).
 

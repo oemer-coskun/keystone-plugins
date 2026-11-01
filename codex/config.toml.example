@@ -8,7 +8,7 @@
 
 [mcp_servers.keystone]
 command = "node"
-# Absoluter Pfad zur heruntergeladenen Datei (https://meister-ai.io/downloads/keystone-mcp.mjs), z. B.
+# Absoluter Pfad zur heruntergeladenen Datei (https://keystone.oemer-coskun.de/downloads/keystone-mcp.mjs), z. B.
 #   macOS:   /Users/<name>/.keystone/keystone-mcp.mjs
 #   Linux:   /home/<name>/.keystone/keystone-mcp.mjs
 #   Windows: der in PowerShell angezeigte Pfad, mit Schrägstrichen / statt Backslashes
@@ -18,7 +18,7 @@ startup_timeout_sec = 15
 tool_timeout_sec = 60
 
 [mcp_servers.keystone.env]
-KEYSTONE_URL = "https://meister-ai.io"
+KEYSTONE_URL = "https://keystone.oemer-coskun.de"
 KEYSTONE_SOURCE = "CODEX"
 # Optional: Ordner, unter dem keystone_start_lab Lab-Unterordner anlegen darf.
 # Standard ist das Arbeitsverzeichnis des Servers; keystone_whoami zeigt den aktiven Wert.
