@@ -1,0 +1,25 @@
+# Keystone-MCP-Server für OpenAI Codex (CLI, IDE-Erweiterung und Desktop-App teilen diese Datei).
+# In ~/.codex/config.toml einfügen (Windows: %USERPROFILE%\.codex\config.toml).
+#
+# Der Token steht NICHT in dieser Datei: `env_vars` reicht KEYSTONE_TOKEN aus deiner
+# Shell-Umgebung an den Server weiter. Vorher setzen, z. B.:
+#   export KEYSTONE_TOKEN="kst_pat_..."            (macOS/Linux, z. B. in ~/.zshrc)
+#   setx KEYSTONE_TOKEN "kst_pat_..."               (Windows, danach neues Terminal öffnen)
+
+[mcp_servers.keystone]
+command = "node"
+# Absoluter Pfad zur heruntergeladenen Datei (https://meister-ai.io/downloads/keystone-mcp.mjs), z. B.
+#   macOS:   /Users/<name>/.keystone/keystone-mcp.mjs
+#   Linux:   /home/<name>/.keystone/keystone-mcp.mjs
+#   Windows: der in PowerShell angezeigte Pfad, mit Schrägstrichen / statt Backslashes
+args = ["/ABSOLUTER/PFAD/.keystone/keystone-mcp.mjs"]
+env_vars = ["KEYSTONE_TOKEN"]
+startup_timeout_sec = 15
+tool_timeout_sec = 60
+
+[mcp_servers.keystone.env]
+KEYSTONE_URL = "https://meister-ai.io"
+KEYSTONE_SOURCE = "CODEX"
+# Optional: Ordner, unter dem keystone_start_lab Lab-Unterordner anlegen darf.
+# Standard ist das Arbeitsverzeichnis des Servers; keystone_whoami zeigt den aktiven Wert.
+# KEYSTONE_PROJECT_DIR = "/pfad/zum/projekt"

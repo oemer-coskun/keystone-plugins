@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "keystone": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/keystone-mcp.mjs"],
+      "env": {
+        "KEYSTONE_URL": "${user_config.keystone_url}",
+        "KEYSTONE_TOKEN": "${user_config.keystone_token}",
+        "KEYSTONE_SOURCE": "CLAUDE_CODE",
+        "KEYSTONE_PROJECT_DIR": "${CLAUDE_PROJECT_DIR}"
+      }
+    }
+  }
+}

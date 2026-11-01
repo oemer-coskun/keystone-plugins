@@ -1,0 +1,33 @@
+{
+  "name": "keystone",
+  "displayName": "Keystone",
+  "version": "0.1.0",
+  "description": "Keystone-Lektionen, Labs und Notizen in deiner eigenen Claude-Code-Sitzung: sokratischer Tutor, Lab-Workflow, Notizen und Sitzungsprotokoll über den Keystone-MCP-Server.",
+  "author": { "name": "Keystone" },
+  "homepage": "https://meister-ai.io/konto/agent",
+  "repository": "https://github.com/oemer-coskun/keystone-plugins",
+  "license": "LicenseRef-Keystone",
+  "keywords": ["learning", "tutor", "labs", "mcp", "agentic-coding"],
+  "userConfig": {
+    "keystone_url": {
+      "type": "string",
+      "title": "Keystone-URL",
+      "description": "Adresse deiner Keystone-Instanz, z. B. https://meister-ai.io (http nur für localhost).",
+      "default": "https://meister-ai.io",
+      "required": true
+    },
+    "keystone_token": {
+      "type": "string",
+      "title": "Keystone-Token",
+      "description": "Persönlicher Zugangstoken (kst_pat_...) aus Keystone › Konto › Agent-Zugang. Wird im sicheren Speicher abgelegt.",
+      "sensitive": true,
+      "required": true
+    },
+    "session_reminder": {
+      "type": "boolean",
+      "title": "Sitzungs-Erinnerung",
+      "description": "Nach einer Sitzung mit Keystone-Tools einmal an /keystone:log erinnern (rein lokal, sendet nichts).",
+      "default": true
+    }
+  }
+}

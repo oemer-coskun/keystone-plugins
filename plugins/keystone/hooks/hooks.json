@@ -1,0 +1,30 @@
+{
+  "description": "Keystone: lokale Erinnerung, eine Sitzung mit /keystone:log zu protokollieren. Keine Netzwerkzugriffe, keine automatischen Schreibvorgaenge in Keystone.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "^mcp__plugin_keystone_keystone__keystone_",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/session-reminder.mjs", "track"],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/session-reminder.mjs", "stop"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

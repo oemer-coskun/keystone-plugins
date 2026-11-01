@@ -1,0 +1,29 @@
+Keystone Plugins – Licence
+
+Copyright (c) 2025–2026 the Keystone rights holder. All rights reserved.
+
+The Keystone plugin, skills, hooks, configuration examples and the Keystone MCP
+server (keystone-mcp.mjs) in this repository are proprietary. They are made
+available so that Keystone learners can connect their own coding agent to their
+Keystone account.
+
+Permitted use: learners and team members with a Keystone account may download,
+install and run these files on their own devices to use Keystone. No other
+right is granted. In particular you may not modify, redistribute, sell, host or
+offer these files as a service, or use them with services other than Keystone,
+unless the rights holder agrees in writing.
+
+Use of Keystone itself is governed by the terms accepted for your Keystone
+account.
+
+The open-source packages bundled in keystone-mcp.mjs are licensed under their
+own terms; see plugins/keystone/server/THIRD-PARTY-NOTICES.txt.
+
+THE FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, TO THE EXTENT
+PERMITTED BY APPLICABLE LAW.
+
+---
+
+Deutsch (Kurzfassung): Alle Rechte vorbehalten. Personen mit einem Keystone-Konto
+dürfen diese Dateien auf eigenen Geräten installieren und nutzen, um Keystone mit
+ihrem eigenen Coding-Agenten zu verwenden. Weitere Rechte werden nicht eingeräumt.

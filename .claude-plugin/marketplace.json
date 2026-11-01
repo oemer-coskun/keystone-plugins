@@ -1,0 +1,14 @@
+{
+  "name": "keystone-plugins",
+  "description": "Keystone-Plugins für Claude Code: Lektionen, Labs und Notizen in der eigenen Sitzung.",
+  "owner": {
+    "name": "Keystone"
+  },
+  "plugins": [
+    {
+      "name": "keystone",
+      "source": "./plugins/keystone",
+      "description": "Sokratischer Tutor, Lab-Workflow, Notizen und Sitzungsprotokoll über den Keystone-MCP-Server."
+    }
+  ]
+}
